@@ -1,0 +1,55 @@
+
+entity UserProfile {
+	name String
+    email String
+    password String
+    nativeLanguage String
+    targetLanguage String
+}
+
+entity Archive {
+    timestamp ZonedDateTime
+    proficiencyLvl Integer
+}
+
+entity Favorites {
+    timestamp ZonedDateTime
+    proficiencyLvl Integer
+}
+
+entity Word {
+    language String
+    wordText String
+    partOfSpeech String
+    pronunciation String
+    audio String
+    definition String
+    exampleSentence String
+    etymology String
+}
+
+relationship OneToOne {
+	UserProfile{archive} to Archive
+}
+
+relationship OneToOne {
+	UserProfile{favorites} to Favorites
+}
+
+relationship OneToMany {
+	Archive{word} to Word
+}
+
+relationship OneToMany {
+	Favorites{word} to Word
+}
+
+// Set pagination options
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

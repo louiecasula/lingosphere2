@@ -1,0 +1,27 @@
+{
+  "lingosphere2App": {
+    "archive": {
+      "home": {
+        "title": "Archives",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Archive",
+        "createOrEditLabel": "Crear o editar Archive",
+        "notFound": "Ningún Archives encontrado"
+      },
+      "created": "Un nuevo Archive ha sido creado con el identificador {{ param }}",
+      "updated": "Un Archive ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Archive ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Archive {{ id }}?"
+      },
+      "detail": {
+        "title": "Archive"
+      },
+      "id": "ID",
+      "timestamp": "Timestamp",
+      "proficiencyLvl": "Proficiency Lvl",
+      "word": "Word",
+      "userProfile": "User Profile"
+    }
+  }
+}

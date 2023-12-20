@@ -1,0 +1,27 @@
+{
+  "lingosphere2App": {
+    "favorites": {
+      "home": {
+        "title": "Favorites",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Favorites",
+        "createOrEditLabel": "Genera o modifica un Favorites",
+        "notFound": "No Favorites found"
+      },
+      "created": "&Egrave; stato generato un nuovo Favorites con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Favorites identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Favorites con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Favorites {{ id }}?"
+      },
+      "detail": {
+        "title": "Favorites"
+      },
+      "id": "ID",
+      "timestamp": "Timestamp",
+      "proficiencyLvl": "Proficiency Lvl",
+      "word": "Word",
+      "userProfile": "User Profile"
+    }
+  }
+}

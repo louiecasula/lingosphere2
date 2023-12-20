@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20231220224126"
+  },
+  "applications": "*",
+  "entityTableName": "word",
+  "fields": [
+    {
+      "fieldName": "language",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "wordText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "partOfSpeech",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pronunciation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "audio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "definition",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exampleSentence",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etymology",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Word",
+  "relationships": [],
+  "searchEngine": "no"
+}

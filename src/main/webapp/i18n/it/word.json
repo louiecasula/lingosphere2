@@ -1,0 +1,33 @@
+{
+  "lingosphere2App": {
+    "word": {
+      "home": {
+        "title": "Words",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Word",
+        "createOrEditLabel": "Genera o modifica un Word",
+        "notFound": "No Words found"
+      },
+      "created": "&Egrave; stato generato un nuovo Word con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Word identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Word con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Word {{ id }}?"
+      },
+      "detail": {
+        "title": "Word"
+      },
+      "id": "ID",
+      "language": "Language",
+      "wordText": "Word Text",
+      "partOfSpeech": "Part Of Speech",
+      "pronunciation": "Pronunciation",
+      "audio": "Audio",
+      "definition": "Definition",
+      "exampleSentence": "Example Sentence",
+      "etymology": "Etymology",
+      "archive": "Archive",
+      "favorites": "Favorites"
+    }
+  }
+}

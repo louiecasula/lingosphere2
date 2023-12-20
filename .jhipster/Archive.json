@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20231220223926"
+  },
+  "applications": "*",
+  "entityTableName": "archive",
+  "fields": [
+    {
+      "fieldName": "timestamp",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "proficiencyLvl",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Archive",
+  "relationships": [
+    {
+      "otherEntityName": "word",
+      "relationshipName": "word",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

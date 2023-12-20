@@ -31,18 +31,20 @@
         <jhipster-dependencies.version>8.1.0</jhipster-dependencies.version>
         <spring-boot.version>3.2.0</spring-boot.version>
         <archunit-junit5.version>1.2.1</archunit-junit5.version>
-        <blockhound-junit-platform.version>1.0.8.RELEASE</blockhound-junit-platform.version>
         <checkstyle.version>10.12.5</checkstyle.version>
         <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
-        <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
         <git-commit-id-maven-plugin.version>7.0.0</git-commit-id-maven-plugin.version>
+        <h2.version>2.2.224</h2.version>
+        <hibernate.version>6.3.1.Final</hibernate.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <jaxb-runtime.version>4.0.4</jaxb-runtime.version>
         <jib-maven-plugin.architecture>amd64</jib-maven-plugin.architecture>
         <jib-maven-plugin.image>eclipse-temurin:17-jre-focal</jib-maven-plugin.image>
         <jib-maven-plugin.version>3.4.0</jib-maven-plugin.version>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
+        <liquibase-plugin.driver/>
+        <liquibase-plugin.hibernate-dialect/>
         <liquibase-plugin.password/>
         <liquibase-plugin.url/>
         <liquibase-plugin.username/>
@@ -62,7 +64,6 @@
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
         <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-        <micrometer-context-propagation.version>1.1.0</micrometer-context-propagation.version>
         <modernizer-maven-plugin.version>2.7.0</modernizer-maven-plugin.version>
         <nohttp-checkstyle.version>0.0.11</nohttp-checkstyle.version>
         <profile.api-docs/>
@@ -108,7 +109,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-r2dbc</artifactId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -137,11 +142,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -150,12 +155,20 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-data</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webflux-api</artifactId>
+            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate6</artifactId>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -168,10 +181,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-jaxb-annotations</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
         </dependency>
         <dependency>
             <groupId>com.tngtech.archunit</groupId>
@@ -192,55 +201,48 @@
             <artifactId>HikariCP</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>${commons-beanutils.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.asyncer</groupId>
-            <artifactId>r2dbc-mysql</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-core</artifactId>
-        </dependency>
-        <dependency>
-            <!-- fix https://github.com/jhipster/generator-jhipster/issues/21359 -->
-            <groupId>io.micrometer</groupId>
-            <artifactId>context-propagation</artifactId>
-            <version>${micrometer-context-propagation.version}</version>
         </dependency>
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-resolver-dns-native-macos</artifactId>
-            <classifier>osx-aarch_64</classifier>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-tcnative-boringssl-static</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor.tools</groupId>
-            <artifactId>blockhound-junit-platform</artifactId>
-            <version>${blockhound-junit-platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <classifier>jakarta</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-jcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.liquibase</groupId>
@@ -259,17 +261,13 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>jdbc</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
-            <artifactId>mysql</artifactId>
+            <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -517,6 +515,11 @@
                                 <artifactId>jaxb-runtime</artifactId>
                                 <version>${jaxb-runtime.version}</version>
                             </path>
+                            <path>
+                                <groupId>org.hibernate.orm</groupId>
+                                <artifactId>hibernate-jpamodelgen</artifactId>
+                                <version>${hibernate.version}</version>
+                            </path>
                         </annotationProcessorPaths>
                     </configuration>
                 </plugin>
@@ -574,14 +577,13 @@
                         <!-- Due to spring-boot repackage, without adding this property test classes are not found
                              See https://github.com/spring-projects/spring-boot/issues/6254 -->
                         <!-- Force alphabetical order to have a reproducible build -->
-                        <!-- Fix tests at java 13+ https://github.com/reactor/BlockHound/issues/33 -->
                         <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                         <runOrder>alphabetical</runOrder>
                         <includes>
                             <include>**/*IT*</include>
                             <include>**/*IntTest*</include>
                         </includes>
-                        <argLine>@{argLine} -XX:+AllowRedefinitionToAddDeleteMethods -Dspring.profiles.active=${profile.test}</argLine>
+                        <argLine>@{argLine} -Dspring.profiles.active=${profile.test}</argLine>
                     </configuration>
                     <executions>
                         <execution>
@@ -660,13 +662,11 @@
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <!-- Force alphabetical order to have a reproducible build -->
-                        <!-- Fix tests at java 13+ https://github.com/reactor/BlockHound/issues/33 -->
                         <runOrder>alphabetical</runOrder>
                         <excludes>
                             <exclude>**/*IT*</exclude>
                             <exclude>**/*IntTest*</exclude>
                         </excludes>
-                        <argLine>@{argLine} -XX:+AllowRedefinitionToAddDeleteMethods</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -773,11 +773,12 @@
                     <configuration>
                         <changeLogFile>config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <driver>${liquibase-plugin.driver}</driver>
                         <url>${liquibase-plugin.url}</url>
                         <defaultSchemaName/>
                         <username>${liquibase-plugin.username}</username>
                         <password>${liquibase-plugin.password}</password>
+                        <referenceUrl>hibernate:spring:com.mycompany.myapp.domain?dialect=${liquibase-plugin.hibernate-dialect}&amp;hibernate.physical_naming_strategy=org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>
                         <contexts>!test</contexts>
@@ -802,6 +803,11 @@
                             <groupId>jakarta.validation</groupId>
                             <artifactId>jakarta.validation-api</artifactId>
                             <version>${validation-api.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -830,8 +836,10 @@
                 <!-- default Spring profiles -->
                 <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
                 <profile.test>testdev</profile.test>
-                <liquibase-plugin.url>jdbc:mysql://localhost:3306/lingosphere2</liquibase-plugin.url>
-                <liquibase-plugin.username>root</liquibase-plugin.username>
+                <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.H2Dialect</liquibase-plugin.hibernate-dialect>
+                <liquibase-plugin.driver>org.h2.Driver</liquibase-plugin.driver>
+                <liquibase-plugin.url>jdbc:h2:file:${project.build.directory}/h2db/db/lingosphere2</liquibase-plugin.url>
+                <liquibase-plugin.username>lingosphere2</liquibase-plugin.username>
                 <liquibase-plugin.password/>
             </properties>
             <dependencies>
@@ -840,7 +848,24 @@
                     <artifactId>spring-boot-devtools</artifactId>
                     <optional>true</optional>
                 </dependency>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                </dependency>
             </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <testExcludes>
+                                <testExclude>com/mycompany/myapp/config/PostgreSqlTestContainer.java</testExclude>
+                            </testExcludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <!-- This is automatically activated when working in Eclipse -->
@@ -920,6 +945,10 @@
                     <artifactId>mapstruct-processor</artifactId>
                     <version>${mapstruct.version}</version>
                 </dependency>
+                <dependency>
+                    <groupId>org.hibernate.orm</groupId>
+                    <artifactId>hibernate-jpamodelgen</artifactId>
+                </dependency>
             </dependencies>
         </profile>
         <profile>
@@ -934,8 +963,10 @@
                 <!-- default Spring profiles -->
                 <spring.profiles.active>prod${profile.api-docs}${profile.tls}${profile.e2e}${profile.no-liquibase}</spring.profiles.active>
                 <profile.test>testprod</profile.test>
-                <liquibase-plugin.url>jdbc:mysql://localhost:3306/lingosphere2</liquibase-plugin.url>
-                <liquibase-plugin.username>root</liquibase-plugin.username>
+                <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.PostgreSQLDialect</liquibase-plugin.hibernate-dialect>
+                <liquibase-plugin.driver>org.postgresql.Driver</liquibase-plugin.driver>
+                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/lingosphere2</liquibase-plugin.url>
+                <liquibase-plugin.username>lingosphere2</liquibase-plugin.username>
                 <liquibase-plugin.password/>
             </properties>
             <build>
@@ -1011,6 +1042,12 @@
                     </plugin>
                 </plugins>
             </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>tls</id>
@@ -1069,7 +1106,7 @@
                                         <include>package-lock.json</include>
                                         <include>package.json</include>
                                         <include>tsconfig.json</include>
-                                        <include>tsconfig.app.json</include>
+                                        <include>.postcss.config.js</include>
                                         <include>webpack/*.*</include>
                                     </includes>
                                     <excludes>

@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20231220223826"
+  },
+  "applications": "*",
+  "entityTableName": "user_profile",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nativeLanguage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "targetLanguage",
+      "fieldType": "String"
+    }
+  ],
+  "name": "UserProfile",
+  "relationships": [
+    {
+      "otherEntityName": "archive",
+      "relationshipName": "archive",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "favorites",
+      "relationshipName": "favorites",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

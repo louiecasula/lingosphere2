@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserProfile.
+    -->
+    <changeSet id="20231220223826-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="archive_id"
+                                 baseTableName="user_profile"
+                                 constraintName="fk_user_profile__archive_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="archive"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="favorites_id"
+                                 baseTableName="user_profile"
+                                 constraintName="fk_user_profile__favorites_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="favorites"
+                                 />
+    </changeSet>
+</databaseChangeLog>

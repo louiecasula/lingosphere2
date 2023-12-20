@@ -1,0 +1,27 @@
+{
+  "lingosphere2App": {
+    "archive": {
+      "home": {
+        "title": "Archives",
+        "refreshListLabel": "リストの更新",
+        "createLabel": "Archive の作成",
+        "createOrEditLabel": "Archiveの作成または編集",
+        "notFound": "Archives が見つかりません。"
+      },
+      "created": "新しい Archive がID {{ param }} で作成されました。",
+      "updated": "ID {{ param }} の Archive が更新されました。",
+      "deleted": "ID {{ param }} の Archive が削除されました。",
+      "delete": {
+        "question": "Archive {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Archive"
+      },
+      "id": "ID",
+      "timestamp": "Timestamp",
+      "proficiencyLvl": "Proficiency Lvl",
+      "word": "Word",
+      "userProfile": "User Profile"
+    }
+  }
+}

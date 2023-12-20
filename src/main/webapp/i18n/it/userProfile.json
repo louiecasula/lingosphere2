@@ -1,0 +1,30 @@
+{
+  "lingosphere2App": {
+    "userProfile": {
+      "home": {
+        "title": "UserProfiles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo User Profile",
+        "createOrEditLabel": "Genera o modifica un User Profile",
+        "notFound": "No User Profiles found"
+      },
+      "created": "&Egrave; stato generato un nuovo User Profile con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato User Profile identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato User Profile con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare User Profile {{ id }}?"
+      },
+      "detail": {
+        "title": "User Profile"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "nativeLanguage": "Native Language",
+      "targetLanguage": "Target Language",
+      "archive": "Archive",
+      "favorites": "Favorites"
+    }
+  }
+}

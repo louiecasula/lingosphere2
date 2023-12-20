@@ -1,0 +1,27 @@
+{
+  "lingosphere2App": {
+    "favorites": {
+      "home": {
+        "title": "Favorites",
+        "refreshListLabel": "リストの更新",
+        "createLabel": "Favorites の作成",
+        "createOrEditLabel": "Favoritesの作成または編集",
+        "notFound": "Favorites が見つかりません。"
+      },
+      "created": "新しい Favorites がID {{ param }} で作成されました。",
+      "updated": "ID {{ param }} の Favorites が更新されました。",
+      "deleted": "ID {{ param }} の Favorites が削除されました。",
+      "delete": {
+        "question": "Favorites {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Favorites"
+      },
+      "id": "ID",
+      "timestamp": "Timestamp",
+      "proficiencyLvl": "Proficiency Lvl",
+      "word": "Word",
+      "userProfile": "User Profile"
+    }
+  }
+}

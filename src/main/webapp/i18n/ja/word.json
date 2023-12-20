@@ -1,0 +1,33 @@
+{
+  "lingosphere2App": {
+    "word": {
+      "home": {
+        "title": "Words",
+        "refreshListLabel": "リストの更新",
+        "createLabel": "Word の作成",
+        "createOrEditLabel": "Wordの作成または編集",
+        "notFound": "Words が見つかりません。"
+      },
+      "created": "新しい Word がID {{ param }} で作成されました。",
+      "updated": "ID {{ param }} の Word が更新されました。",
+      "deleted": "ID {{ param }} の Word が削除されました。",
+      "delete": {
+        "question": "Word {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Word"
+      },
+      "id": "ID",
+      "language": "Language",
+      "wordText": "Word Text",
+      "partOfSpeech": "Part Of Speech",
+      "pronunciation": "Pronunciation",
+      "audio": "Audio",
+      "definition": "Definition",
+      "exampleSentence": "Example Sentence",
+      "etymology": "Etymology",
+      "archive": "Archive",
+      "favorites": "Favorites"
+    }
+  }
+}

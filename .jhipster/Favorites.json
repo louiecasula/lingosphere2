@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20231220224026"
+  },
+  "applications": "*",
+  "entityTableName": "favorites",
+  "fields": [
+    {
+      "fieldName": "timestamp",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "proficiencyLvl",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Favorites",
+  "relationships": [
+    {
+      "otherEntityName": "word",
+      "relationshipName": "word",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}
